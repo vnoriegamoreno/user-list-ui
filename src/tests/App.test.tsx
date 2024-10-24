@@ -6,34 +6,29 @@ import { UserList as UserState } from 'types/userTypes';
 import userReducer from 'store/slices/userSlice';
 
 type InitialState = {
-  initialState: { userSlice: UserState }
-}
+  initialState: { userSlice: UserState };
+};
 
 const renderWithRedux = (
   component: JSX.Element,
   { initialState }: InitialState
 ) => {
   const store = configureStore({
-    reducer: { userSlice: userReducer }, preloadedState: initialState
+    reducer: { userSlice: userReducer },
+    preloadedState: initialState,
   });
   return {
-    ...render(
-      <Provider store={store}>
-        {component}
-      </Provider>
-    ), store
-  }
+    ...render(<Provider store={store}>{component}</Provider>),
+    store,
+  };
 };
 
 test('renders learn react link', () => {
-  renderWithRedux(
-    <App />,
-    {
-      initialState: {
-        userSlice: { userList: [] }
-      }
-    }
-  )
+  renderWithRedux(<App />, {
+    initialState: {
+      userSlice: { userList: [] },
+    },
+  });
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
