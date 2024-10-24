@@ -1,6 +1,19 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUsers } from 'store/slices/userSlice';
+import fakeAPIUserListRes from 'mock/user-list.mock.json';
 import logo from './logo.svg';
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loadUserList = (): void => {
+      dispatch(setUsers(fakeAPIUserListRes));
+    };
+    loadUserList();
+  }, [dispatch]);
+
   return (
     <div className="App">
       <header className="App-header">
