@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es6",
+  },
+  "include": ["src"]
+}
