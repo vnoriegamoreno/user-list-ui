@@ -8,8 +8,17 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const loadUserList = (): void => {
-      dispatch(setUsers(fakeAPIUserListRes));
+    const loadUserList = async (): Promise<void> => {
+      const response = await fetch('http://localhost:8080/api/user');
+      try {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const userList = await response.json();
+        dispatch(setUsers(userList.data || []));
+      } catch (err) {
+        console.error('Error fetching user data:', err);
+      }
     };
     loadUserList();
   }, [dispatch]);
