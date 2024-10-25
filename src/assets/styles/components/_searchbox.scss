@@ -1,0 +1,33 @@
+.SearchboxForm {
+  display: flex;
+  font-size: 16px;
+  height: 32px;
+  margin: auto 16px;
+  width: calc(100% - 32px);
+  
+  .SearchboxInputField {
+    border-radius: 2px;
+    border: 1px solid var(--app-primary-color);
+    color: var(--app-secondary-color);
+    font-size: inherit;
+    flex: 3;
+    padding-left: 10px;
+
+    &::placeholder {
+      color: var(--app-secondary-color);
+      opacity: 0.7;
+    }
+
+    &:focus { outline: none; }
+  }
+
+  .SearchboxButton {
+    background: var(--app-secondary-color);
+    border-radius: 2px;
+    border: 0px;
+    color: var(--app-white-color);
+    font-size: inherit;
+    flex: 1;
+    margin-left: 8px;
+  }
+}
