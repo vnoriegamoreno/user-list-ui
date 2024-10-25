@@ -1,7 +1,9 @@
 export interface User {
   id: string;
   name: string;
-  email: string;
+  age: string;
+  city: string;
+  friends: User[];
 }
 
 export interface UserList {
