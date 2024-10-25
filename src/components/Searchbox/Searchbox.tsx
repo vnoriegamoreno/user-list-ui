@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { User } from 'types/userTypes';
-import userData from 'mock/user-list.mock.json';
+import { setUserListFilter } from 'store/slices/userSlice';
 
-type UsersFounded = User[] | User | [];
+type FilteredUser = User[] | [];
 
 const Searchbox = () => {
+  const dispatch = useDispatch();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const userList = useSelector((state: any) => state.userSlice.userList);
   const [inputValue, setInputValue] = useState('');
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,9 +18,10 @@ const Searchbox = () => {
 
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    const usersFounded: UsersFounded =
-      userData.find((u) => u.name.match(inputValue)) || [];
-    console.log({ inputValue, usersFounded });
+    const filteredUser: FilteredUser = userList.filter((user: User) =>
+      user.name.match(inputValue)
+    );
+    dispatch(setUserListFilter(inputValue === '' ? userList : filteredUser));
   };
 
   return (
@@ -28,7 +33,7 @@ const Searchbox = () => {
       <input
         className="SearchboxInputField"
         onChange={onChangeHandler}
-        placeholder="Users"
+        placeholder="Search user"
         type="text"
       />
       <button className="SearchboxButton">Search</button>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setUsers } from 'store/slices/userSlice';
+import { setUsers, setUserListFilter } from 'store/slices/userSlice';
 
 import Header from 'components/Header/Header';
 import Searchbox from 'components/Searchbox/Searchbox';
@@ -10,7 +10,8 @@ import { User } from 'types/userTypes';
 
 const Main: React.FC = () => {
   const dispatch = useDispatch();
-  const userList = useSelector((state: any) => state.userSlice.userList);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const userList = useSelector((state: any) => state.userSlice.userListFilter);
 
   useEffect(() => {
     (async function loadUsers(): Promise<void> {
@@ -21,6 +22,7 @@ const Main: React.FC = () => {
         }
         const data = await response.json();
         dispatch(setUsers(data));
+        dispatch(setUserListFilter(data));
       } catch (err) {
         console.error('Error fetching user data: ', err);
       }
