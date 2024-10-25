@@ -1,9 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import App from 'App';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
+import App from 'App';
 import { UserList as UserState } from 'types/userTypes';
 import userReducer from 'store/slices/userSlice';
+
+jest.mock('pages/Main/Main', () => {
+  const MockMainPage = () => <div>Main Page</div>;
+  MockMainPage.displayName = 'MockMainPage';
+  return MockMainPage;
+});
 
 type InitialState = {
   initialState: { userSlice: UserState };
@@ -23,12 +29,12 @@ const renderWithRedux = (
   };
 };
 
-test('renders learn react link', () => {
+test('renders the Main component on the default route "/"', () => {
   renderWithRedux(<App />, {
     initialState: {
       userSlice: { userList: [] },
     },
   });
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const mainElement = screen.getByText('Main Page');
+  expect(mainElement).toBeInTheDocument();
 });
