@@ -9,3 +9,8 @@ export interface User {
 export interface UserList {
   userList: User[];
 }
+
+export interface UserState {
+  userList: User[];
+  userListFilter: User[];
+}

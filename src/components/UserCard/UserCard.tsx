@@ -1,12 +1,12 @@
 import { User } from 'types/userTypes';
 
-const UserCard = ({ id, name, age, city, friends }: User) => (
+const UserCard = ({ id, name }: User) => (
   <ul>
-    <li>{id}</li>
-    <li>{name}</li>
-    <li>{age}</li>
-    <li>{city}</li>
-    <li>{friends?.length}</li>
+    <li>ID: {id}</li>
+    <li>Name: {name}</li>
+    <li>
+      <button>View details</button>
+    </li>
   </ul>
 );
 
