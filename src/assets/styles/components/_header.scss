@@ -1,6 +1,26 @@
+$svg-size: 36px;
+
 .Header {
   .Title {
     color: var(--app-primary-color);
     margin: 16px 20px;
+    position: relative;
+
+    .LeftArrow {
+      display: inline-block;
+      position: relative;
+      top: 7px;
+      height: $svg-size;
+      width: $svg-size;
+
+      svg {
+        height: $svg-size;
+        width: $svg-size;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
