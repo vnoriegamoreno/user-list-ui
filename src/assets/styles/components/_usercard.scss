@@ -1,0 +1,55 @@
+$svg-size: 130px;
+
+.UserList {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  gap: 18px;
+  justify-content: center;
+  margin: 16px auto;
+  text-align: center;
+
+  .UserCard {
+    background: var(--app-tertiary-color);
+    box-sizing: border-box;
+    border-radius: 2px;
+    flex: 1 1 100%;
+    max-width: 43%;
+
+    .Avatar {
+      background: var(--app-white-color);
+      border-radius: 100%;
+      height: $svg-size;
+      margin: 20px auto;
+      width: $svg-size;
+
+      svg {
+        height: $svg-size;
+        width: $svg-size;
+
+        path {
+          fill: var(--app-secondary-color);
+        }
+      }
+    }
+
+    .UserName {
+      font-size: inherit;
+      font-weight: 400;
+    }
+
+    .ViewUserDetails {
+      background: var(--app-secondary-color);
+      border: 0px;
+      border-radius: 2px;
+      color: var(--app-white-color);
+      font-size: inherit;
+      margin: 10px auto 30px auto;
+      padding: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
