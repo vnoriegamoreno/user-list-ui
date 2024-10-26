@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# User List UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User List UI is a React-based frontend application for viewing and managing user profiles. It interacts with a backend API to fetch and display user data, and allows users to search and view detailed profiles.
 
-## Available Scripts
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
+- [Setup Guide](#setup-guide)
+- [Project Interaction](#project-interaction)
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- **Node.js** and **npm** installed on your system.
+- **Backend API Setup**: The frontend depends on the [user-list-api](https://github.com/vnoriegamoreno/user-list-api) backend for data. Make sure to set up and run this API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **`src/components`**: Reusable UI components such as `Header`, `Searchbox`, and `UserCard`.
+- **`src/pages`**: Main pages of the app, including the main user list page and profile view.
+- **`src/store`**: Redux slices and store configuration.
+- **`src/assets`**: Static assets like images and styles.
+- **`src/types`**: TypeScript types for better type safety and code documentation.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Guide
 
-### `npm run build`
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/vnoriegamoreno/user-list-ui.git
+   cd user-list-ui
+   ```
+2. **Clone the Repository**
+   ```bash
+    npm install
+    ```
+3. **Run the Application**
+   ```bash
+   npm run start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Run Unit Test**
+   ```bash
+   npm run test
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Interaction
+![user-list-record](https://github.com/user-attachments/assets/7453f6c2-20cd-46e0-92d4-5d3bd4f8c9fa)
