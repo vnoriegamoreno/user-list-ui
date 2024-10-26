@@ -1,0 +1,42 @@
+$svg-size: 160px;
+
+.Profile {
+  .ProfileDetails {
+    display: flex;
+    flex-wrap: wrap;
+
+    .ProfileAvatar {
+      background: var(--app-tertiary-color);
+      border-radius: 100%;
+      height: $svg-size;
+      margin-left: 16px;
+      width: $svg-size;
+
+      svg {
+        height: $svg-size;
+        width: $svg-size;
+
+        path {
+          fill: var(--app-secondary-color);
+        }
+      }
+    }
+
+    .ProfileProperties {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      list-style: none;
+      padding-left: 10px;
+
+      li {
+        flex: 1;
+      }
+    }
+  }
+
+  .Title {
+    margin-left: 16px;
+  }
+}
