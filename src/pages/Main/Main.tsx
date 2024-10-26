@@ -8,6 +8,7 @@ import Searchbox from 'components/Searchbox/Searchbox';
 import UserCard from 'components/UserCard/UserCard';
 import { User } from 'types/userTypes';
 
+// TODO: Create unit test for this component
 const Main: React.FC = () => {
   const dispatch = useDispatch();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
