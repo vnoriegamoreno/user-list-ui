@@ -33,9 +33,11 @@ const Main: React.FC = () => {
     <main className="Main" data-testid="Main">
       <Header title="Users" />
       <Searchbox />
-      {userList.length
-        ? userList.map((user: User) => <UserCard {...user} key={user.id} />)
-        : null}
+      <div className="UserList">
+        {userList.length
+          ? userList.map((user: User) => <UserCard {...user} key={user.id} />)
+          : null}
+      </div>
     </main>
   );
 };

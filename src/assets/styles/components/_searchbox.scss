@@ -1,6 +1,6 @@
 .SearchboxForm {
   display: flex;
-  font-size: 16px;
+  font-size: 20px;
   height: 32px;
   margin: auto 16px;
   width: calc(100% - 32px);
@@ -9,8 +9,8 @@
     border-radius: 2px;
     border: 1px solid var(--app-primary-color);
     color: var(--app-secondary-color);
-    font-size: inherit;
     flex: 3;
+    font-size: inherit;
     padding-left: 10px;
 
     &::placeholder {
@@ -26,8 +26,8 @@
     border-radius: 2px;
     border: 0px;
     color: var(--app-white-color);
-    font-size: inherit;
     flex: 1;
+    font-size: inherit;
     margin-left: 8px;
   }
 }
